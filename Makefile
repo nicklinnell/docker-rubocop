@@ -4,6 +4,7 @@ VERSION = "0.47.1"
 all: install
 
 install:
+	docker pull nicklinnell/rubocop:$(VERSION)
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	install -m 0755 rubocop $(DESTDIR)$(PREFIX)/bin/rubocop
 
@@ -14,10 +15,6 @@ uninstall:
 
 build:
 	@docker build -t nicklinnell/rubocop:$(VERSION) . \
-	&& docker tag -f nicklinnell/rubocop:$(VERSION) nicklinnell/rubocop:latest
+	&& docker tag nicklinnell/rubocop:$(VERSION) nicklinnell/rubocop:latest
 
-publish: build
-	@docker push nicklinnell/rubocop:$(VERSION) \
-	&& docker push nicklinnell/rubocop:latest
-
-.PHONY: all install uninstall build publish
+.PHONY: all install uninstall build

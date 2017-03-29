@@ -1,27 +1,27 @@
 # Docker Rubocop wrapper
 
 I wanted to try a little docker wrapper for running Rubocop on my Rails projects without having to have Rubocop installed locally on my machine.
-There are two ways of running the wrapper; using docker directly or the included shell script.
+This means that you can skip adding `rubocop` to the `Gemfile` as well.
 
-## Running from the docker image
-
+## Installation
+The easiest way to install is to run:
 ```
-$ docker run -t -v $(pwd):/tmp nicklinnell/rubocop
-```
-
-## Running from the shell script
-
-Copy the `rubocop` script into an executable place on your local machine, I use `~/.bin` and have that directory included in `$PATH`.
-Once there you can navigate to any ruby project and run:
-```
-$ rubocop
+$ curl -L https://github.com/nicklinnell/docker-rubocop/archive/master.tar.gz | tar xvz
+$ cd docker-rubocop-* && sudo make install
 ```
 
-## Development and building your own image
+This will pull down the latest docker image and add the executable script to `/usr/local/bin`.
 
-If you wish to build your own image use (replace me if your user):
+## Building your own docker image
+Build you own docker image using:
 ```
-$ docker build -t nicklinnell/rubocop .
+$ make build
 ```
 
-Update the `rubocop` bash script to point to your image.
+This will alow you to make any chnages you want to the `Dockerfile` to make it suit you.
+
+## Uninstall
+Uninstall with:
+```
+$ sudo make uninstall
+```
