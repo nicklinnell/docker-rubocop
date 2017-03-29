@@ -1,4 +1,4 @@
-# Docker Rubocop wrapper
+# Rubocop docker wrapper
 
 I wanted to try a little docker wrapper for running Rubocop on my Rails projects without having to have Rubocop installed locally on my machine.
 This means that you can skip adding `rubocop` to the `Gemfile` as well.
