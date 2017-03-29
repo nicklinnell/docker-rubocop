@@ -18,7 +18,7 @@ Build you own docker image using:
 $ make build
 ```
 
-This will alow you to make any chnages you want to the `Dockerfile` to make it suit you.
+This will allow you to make any changes you want to the `Dockerfile` to make it suit you.
 
 ## Uninstall
 Uninstall with:
